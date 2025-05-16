@@ -1,13 +1,5 @@
 # Cinezy - Landing Page Oficial 🎬✨
 
-![Cinezy Landing Page Screenshot](URL_PARA_UM_SCREENSHOT_DA_SUA_LANDING_PAGE_SE_TIVER)
-<!-- Substitua a URL acima por um link para uma imagem da sua landing page, se desejar. Pode ser um link para uma imagem no próprio repo ou um serviço de hospedagem de imagens. -->
-![image](https://github.com/user-attachments/assets/b1972193-1d9d-4e9d-b76a-fc6ccbc6497d)
-![image](https://github.com/user-attachments/assets/87f7bc63-c917-46af-a89f-cc61ee4eebae)
-![image](https://github.com/user-attachments/assets/2c0631f7-e193-41dc-92a9-7454e6a7dc70)
-
-
-
 Esta é a landing page oficial do **Cinezy**, um aplicativo (em desenvolvimento/lançado) projetado para amantes de filmes e séries. O objetivo desta página é apresentar as funcionalidades principais do Cinezy, sua proposta de valor e, futuramente, direcionar os usuários para o download do aplicativo.
 
 ➡️ **Acesse a Landing Page em Funcionamento:** [https://gerald0juni0r.github.io/cinezy-web-version/](https://gerald0juni0r.github.io/cinezy-web-version/)
@@ -73,10 +65,8 @@ Desenvolvido por **Geraldo Júnior (Geraldo Dev)**.
 
 *   Portfólio: [geraldo.is-a.dev](https://geraldo.is-a.dev/)
 *   GitHub: [@gerald0juni0r](https://github.com/gerald0juni0r)
-*   LinkedIn: [Seu LinkedIn aqui, se desejar]
+*   LinkedIn: [gerald0juni0r](https://www.linkedin.com/in/gerald0juni0r/)
 
 ---
 
-Sinta-se à vontade para contribuir, reportar issues ou sugerir melhorias!
-
-https://gerald0juni0r.github.io/cinezy-web-version/
+Sinta-se à vontade para contribuir sugerindo melhorias!
