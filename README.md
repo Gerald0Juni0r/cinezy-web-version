@@ -2,6 +2,20 @@
 
 Esta é a landing page oficial do **Cinezy**, um aplicativo (em desenvolvimento/lançado) projetado para amantes de filmes e séries. O objetivo desta página é apresentar as funcionalidades principais do Cinezy, sua proposta de valor e, futuramente, direcionar os usuários para o download do aplicativo.
 
+<details>
+  <summary><strong>✨ Screenshots da Landing Page ✨</strong> (Clique para expandir)</summary>
+  
+  <br> <!-- Pequeno espaço -->
+
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/e6bed772-fedf-4a0d-bca6-0eae2e6fdd40" alt="Hero Section" width="400">
+  </p>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/674935eb-dbcb-4d3b-b005-7c1a29778f54" alt="Features Section" width="400">
+  </p>
+
+</details>
+
 ➡️ **Acesse a Landing Page em Funcionamento:** [https://gerald0juni0r.github.io/cinezy-web-version/](https://gerald0juni0r.github.io/cinezy-web-version/)
 
 ## 🚀 Sobre o Projeto
@@ -30,23 +44,6 @@ A landing page foi construída utilizando tecnologias web padrão:
     *   Controle do menu de navegação mobile (sanduíche).
     *   Implementação de animações ao rolar a página (efeito "scroll reveal").
 
-## 🔧 Como Visualizar Localmente
-
-Para visualizar este projeto localmente, siga os passos abaixo:
-
-1.  Clone o repositório:
-    ```bash
-    git clone https://github.com/gerald0juni0r/cinezy-web-version.git
-    ```
-    *(Substitua `gerald0juni0r` pelo seu nome de usuário do GitHub se o repositório estiver sob outro nome/organização)*
-
-2.  Navegue até o diretório do projeto:
-    ```bash
-    cd cinezy-web-version
-    ```
-
-3.  Abra o arquivo `index.html` no seu navegador de preferência.
-
 ## 🎯 Próximos Passos (para a Landing Page)
 
 *   [ ] Adicionar seções para funcionalidades futuras do app (ex: gamificação, aspectos sociais).
@@ -57,7 +54,7 @@ Para visualizar este projeto localmente, siga os passos abaixo:
 ## 📝 Licença
 
 Este projeto é de código aberto e está licenciado sob a [Licença MIT](LICENSE).
-*(Considere adicionar um arquivo `LICENSE` ao seu repositório se ainda não tiver. Você pode gerar um facilmente no GitHub ou usar um template padrão MIT).*
+<!-- Considere adicionar um arquivo `LICENSE` ao seu repositório se ainda não tiver. Você pode gerar um facilmente no GitHub ou usar um template padrão MIT). -->
 
 ## 👨‍💻 Autor
 
@@ -70,3 +67,4 @@ Desenvolvido por **Geraldo Júnior (Geraldo Dev)**.
 ---
 
 Sinta-se à vontade para contribuir sugerindo melhorias!
+
