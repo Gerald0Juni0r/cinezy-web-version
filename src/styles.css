@@ -1,0 +1,370 @@
+/* === RESET BÁSICO E VARIÁVEIS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #4B0082;
+    --dark-bg: #1A0F2A;
+    --light-text: #F0F0F0;
+    --dark-text: #333333;
+    --card-bg: #2a1a3a;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Para conter floats, se houver, ou elementos posicionados */
+    padding: 0 20px;
+}
+
+/* === CABEÇALHO === */
+header {
+    background: var(--dark-bg);
+    color: var(--light-text);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Abaixo do menu mobile (nav) e do botão de toggle quando o menu está ativo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo .header-logo-img { /* Renomeei a classe '.logo' para ter a imagem diretamente */
+    max-height: 40px;
+    width: auto;
+    display: block; /* Remove espaço extra abaixo da imagem se for inline */
+}
+
+/* Navegação Desktop */
+header nav#primary-navigation ul { /* Adicionado ID para especificidade */
+    list-style: none;
+    display: flex; /* Será sobrescrito em mobile */
+}
+
+header nav#primary-navigation ul li {
+    margin-left: 20px; /* Será sobrescrito em mobile */
+}
+
+header nav#primary-navigation ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav#primary-navigation ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* === SEÇÃO HERO === */
+#hero {
+    background: var(--dark-bg);
+    color: var(--light-text);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#hero .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-visual .mockup-img {
+    max-width: 300px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* === SEÇÕES GERAIS === */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+section .subtitle { /* Reutilizado para subtítulos de seção */
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #555; /* Para seções claras */
+}
+
+.dark-section {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.dark-section h2 {
+    color: var(--primary-color);
+}
+.dark-section .subtitle {
+    color: var(--light-text);
+    opacity: 0.9;
+}
+
+/* === SEÇÃO PROBLEMA/SOLUÇÃO === */
+#problem-solution .columns {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+#problem-solution .column {
+    flex: 1;
+}
+
+#problem-solution .column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+.problem-icons span {
+    font-size: 2.5rem;
+    margin-right: 15px;
+}
+.small-mockup {
+    max-width: 250px;
+    display: block;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* === SEÇÃO FUNCIONALIDADES APP === */
+#app-features .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .mockup-img-card {
+    max-width: 100%;
+    height: 250px; /* Altura padronizada para imagens nos cards */
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+.feature-card p {
+    flex-grow: 1; /* Garante que todos os cards tenham a mesma altura se o conteúdo variar */
+}
+
+/* === SEÇÃO PRÉVIA DO APP === */
+#app-preview {
+    background-color: #f9f9f9;
+}
+#app-preview h2 {
+    color: var(--secondary-color);
+}
+
+#app-preview .preview-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.mockup-gallery-img {
+    max-width: 180px; /* Reduzido para caber mais imagens por linha se possível */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+.mockup-gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* === RODAPÉ === */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer .portfolio-credit {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+footer .portfolio-credit a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+footer .portfolio-credit a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-links a {
+    color: var(--primary-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* === ESTILOS DO MENU MOBILE === */
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 9999; /* Mais alto para estar sempre clicável */
+}
+
+.mobile-nav-toggle img {
+    width: 30px;
+    height: 30px;
+    display: block; /* Para remover qualquer espaço extra */
+}
+
+/* === ESTILOS PARA ANIMAÇÕES DE SCROLL === */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+.animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+.animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    /* Header para Mobile */
+    /* header .container já tem display:flex, justify-content:space-between, align-items:center */
+    
+    nav#primary-navigation { /* Estilo base para o menu mobile */
+        display: none; /* Escondido por padrão, JS controla a visibilidade */
+        position: fixed; 
+        inset: 0 0 0 30%; /* Painel lateral: topo 0, direita 0, baixo 0, esquerda 30% */
+        background: var(--dark-bg); 
+        flex-direction: column;
+        padding: min(20vh, 8rem) 2em; /* Espaçamento interno, reduzido um pouco */
+        z-index: 9990; /* Abaixo do botão toggle, acima do header normal */
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2); /* Sombra para o menu lateral */
+    }
+
+    nav#primary-navigation[data-visible="true"] {
+        display: flex; 
+        transform: translateX(0%);
+    }
+
+    nav#primary-navigation ul {
+        flex-direction: column; 
+        gap: 1.5rem; /* Espaço entre itens do menu reduzido */
+        align-items: flex-start; /* Alinha links à esquerda */
+        width: 100%;
+        margin-top: 0; 
+        padding-left: 0; /* Remove padding padrão de ul */
+        list-style: none; /* Remove bullets */
+    }
+    
+    nav#primary-navigation ul li {
+        margin-left: 0; 
+        width: 100%; /* Para que o link ocupe toda a largura se necessário */
+    }
+
+    nav#primary-navigation ul li a {
+        font-size: 1.1rem; /* Fonte do menu mobile ajustada */
+        display: block; /* Para que o padding funcione bem */
+        padding: 0.5rem 0; /* Espaçamento clicável */
+    }
+
+    .mobile-nav-toggle {
+        display: block; 
+        /* order: 1; /* Se precisar ajustar a ordem visual do ícone no header */
+    }
+
+    /* Seções em Mobile */
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+    #hero .subtitle {
+        font-size: 1rem;
+    }
+    
+    #problem-solution .columns {
+        flex-direction: column;
+    }
+    #problem-solution .column {
+        margin-bottom: 30px;
+    }
+    #problem-solution .column:last-child {
+        margin-bottom: 0;
+    }
+
+    #app-features .features-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    #app-preview .preview-gallery {
+        /* Mantém o comportamento de auto-fit, mas com um max-width menor para as imagens */
+    }
+    .mockup-gallery-img {
+        max-width: 150px; /* Imagens menores na galeria em mobile */
+    }
+}
