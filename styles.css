@@ -25,7 +25,7 @@ body {
     width: 90%;
     max-width: 1100px;
     margin: auto;
-    overflow: hidden; /* Para conter floats, se houver, ou elementos posicionados */
+    overflow: hidden;
     padding: 0 20px;
 }
 
@@ -36,7 +36,7 @@ header {
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Abaixo do menu mobile (nav) e do botão de toggle quando o menu está ativo */
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -46,20 +46,20 @@ header .container {
     align-items: center;
 }
 
-header .logo .header-logo-img { /* Renomeei a classe '.logo' para ter a imagem diretamente */
+header .logo .header-logo-img {
     max-height: 40px;
     width: auto;
-    display: block; /* Remove espaço extra abaixo da imagem se for inline */
+    display: block;
 }
 
 /* Navegação Desktop */
-header nav#primary-navigation ul { /* Adicionado ID para especificidade */
+header nav#primary-navigation ul {
     list-style: none;
-    display: flex; /* Será sobrescrito em mobile */
+    display: flex; /* Padrão desktop */
 }
 
 header nav#primary-navigation ul li {
-    margin-left: 20px; /* Será sobrescrito em mobile */
+    margin-left: 20px;
 }
 
 header nav#primary-navigation ul li a {
@@ -96,7 +96,7 @@ header nav#primary-navigation ul li a:hover {
 }
 
 .hero-visual .mockup-img {
-    max-width: 300px;
+    max-width: 300px; /* Será ajustado em mobile */
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -113,14 +113,14 @@ section h2 {
     margin-bottom: 40px;
     color: var(--secondary-color);
 }
-section .subtitle { /* Reutilizado para subtítulos de seção */
+section .subtitle {
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 30px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    color: #555; /* Para seções claras */
+    color: #555;
 }
 
 .dark-section {
@@ -157,7 +157,7 @@ section .subtitle { /* Reutilizado para subtítulos de seção */
     margin-right: 15px;
 }
 .small-mockup {
-    max-width: 250px;
+    max-width: 250px; /* Será ajustado em mobile */
     display: block;
     margin-top: 20px;
     border-radius: 10px;
@@ -194,7 +194,7 @@ section .subtitle { /* Reutilizado para subtítulos de seção */
     color: var(--primary-color);
 }
 .feature-card p {
-    flex-grow: 1; /* Garante que todos os cards tenham a mesma altura se o conteúdo variar */
+    flex-grow: 1;
 }
 
 /* === SEÇÃO PRÉVIA DO APP === */
@@ -209,11 +209,11 @@ section .subtitle { /* Reutilizado para subtítulos de seção */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 15px; /* Espaçamento entre imagens */
 }
 
 .mockup-gallery-img {
-    max-width: 180px; /* Reduzido para caber mais imagens por linha se possível */
+    max-width: 180px; /* Será ajustado em mobile */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -256,9 +256,9 @@ footer .footer-links a:hover {
     text-decoration: underline;
 }
 
-/* === ESTILOS DO MENU MOBILE === */
+/* === ESTILOS DO MENU MOBILE (botão e painel lateral) === */
 .mobile-nav-toggle {
-    display: none;
+    display: none; /* Escondido por padrão em telas maiores */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -269,7 +269,7 @@ footer .footer-links a:hover {
 .mobile-nav-toggle img {
     width: 30px;
     height: 30px;
-    display: block; /* Para remover qualquer espaço extra */
+    display: block;
 }
 
 /* === ESTILOS PARA ANIMAÇÕES DE SCROLL === */
@@ -290,81 +290,164 @@ footer .footer-links a:hover {
 .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
 
 
-/* === RESPONSIVIDADE === */
+/* ========================================================= */
+/* === RESPONSIVIDADE - MEDIA QUERIES === */
+/* ========================================================= */
+
+/* Para telas menores que 768px (Tablets em retrato e Celulares) */
 @media (max-width: 768px) {
-    /* Header para Mobile */
-    /* header .container já tem display:flex, justify-content:space-between, align-items:center */
-    
-    nav#primary-navigation { /* Estilo base para o menu mobile */
-        display: none; /* Escondido por padrão, JS controla a visibilidade */
+    /* Header e Navegação */
+    /* header .container já tem flex, space-between, center */
+    header nav#primary-navigation {
+        display: none; /* Controlado por JS */
         position: fixed; 
-        inset: 0 0 0 30%; /* Painel lateral: topo 0, direita 0, baixo 0, esquerda 30% */
+        inset: 0 0 0 30%; /* Ocupa 70% da largura da tela, deslizando da direita */
         background: var(--dark-bg); 
         flex-direction: column;
-        padding: min(20vh, 8rem) 2em; /* Espaçamento interno, reduzido um pouco */
-        z-index: 9990; /* Abaixo do botão toggle, acima do header normal */
+        padding: min(20vh, 8rem) 2em; 
+        z-index: 9990; 
         transform: translateX(100%);
         transition: transform 350ms ease-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2); /* Sombra para o menu lateral */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     }
 
-    nav#primary-navigation[data-visible="true"] {
+    header nav#primary-navigation[data-visible="true"] {
         display: flex; 
         transform: translateX(0%);
     }
 
-    nav#primary-navigation ul {
+    header nav#primary-navigation ul {
         flex-direction: column; 
-        gap: 1.5rem; /* Espaço entre itens do menu reduzido */
-        align-items: flex-start; /* Alinha links à esquerda */
+        gap: 1.5rem; 
+        align-items: flex-start; /* Alinha links à esquerda no menu */
         width: 100%;
         margin-top: 0; 
-        padding-left: 0; /* Remove padding padrão de ul */
-        list-style: none; /* Remove bullets */
+        padding-left: 0; 
+        list-style: none;
     }
     
-    nav#primary-navigation ul li {
+    header nav#primary-navigation ul li {
         margin-left: 0; 
-        width: 100%; /* Para que o link ocupe toda a largura se necessário */
+        width: 100%; 
     }
 
-    nav#primary-navigation ul li a {
-        font-size: 1.1rem; /* Fonte do menu mobile ajustada */
-        display: block; /* Para que o padding funcione bem */
-        padding: 0.5rem 0; /* Espaçamento clicável */
+    header nav#primary-navigation ul li a {
+        font-size: 1.1rem; 
+        display: block; 
+        padding: 0.5rem 0; 
     }
 
     .mobile-nav-toggle {
-        display: block; 
-        /* order: 1; /* Se precisar ajustar a ordem visual do ícone no header */
+        display: block; /* Mostra o botão hambúrguer */
     }
 
-    /* Seções em Mobile */
+    /* Seções de Conteúdo */
+    section {
+        padding: 40px 0; /* Menos padding em mobile/tablet */
+    }
+    
     #hero h1 {
         font-size: 2.2rem;
     }
     #hero .subtitle {
         font-size: 1rem;
     }
-    
+    .hero-visual .mockup-img {
+        max-width: 80%; /* Ajusta para ser mais responsivo */
+    }
+
+    section h2 {
+        font-size: 1.8rem; /* Títulos menores */
+        margin-bottom: 30px;
+    }
+    section .subtitle {
+        font-size: 0.95rem; /* Subtítulos menores */
+    }
+
     #problem-solution .columns {
-        flex-direction: column;
+        flex-direction: column; /* Pilha as colunas verticalmente */
     }
     #problem-solution .column {
         margin-bottom: 30px;
+        text-align: center; /* Centraliza o texto nas colunas pilhadas */
     }
     #problem-solution .column:last-child {
         margin-bottom: 0;
     }
+    .problem-icons {
+        justify-content: center; /* Centraliza os ícones de problema */
+        display: flex;
+    }
+    .small-mockup {
+        max-width: 100%; /* Ajusta o mockup para ocupar a largura total da coluna */
+    }
 
     #app-features .features-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* Uma coluna para os cards de funcionalidade */
+    }
+    .feature-card .mockup-img-card {
+        height: 200px; /* Altura um pouco menor para cards em mobile */
     }
 
     #app-preview .preview-gallery {
-        /* Mantém o comportamento de auto-fit, mas com um max-width menor para as imagens */
+        gap: 10px; /* Menor espaçamento entre as imagens da galeria */
     }
     .mockup-gallery-img {
-        max-width: 150px; /* Imagens menores na galeria em mobile */
+        max-width: calc(50% - 10px); /* Tenta manter 2 colunas para imagens de prévia */
     }
 }
+
+/* Para telas muito pequenas (Smartphones menores) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* Menos padding lateral para telas muito pequenas */
+    }
+
+    #hero h1 {
+        font-size: 1.8rem; /* Título principal ainda menor */
+    }
+    #hero .subtitle {
+        font-size: 0.9rem;
+    }
+    .hero-visual .mockup-img {
+        max-width: 100%; /* Garante que o mockup ocupe a largura total */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Títulos de seção menores */
+    }
+    section .subtitle {
+        font-size: 0.85rem;
+    }
+    #problem-solution .column h3 {
+        font-size: 1.3rem;
+    }
+    .problem-icons span {
+        font-size: 2rem;
+    }
+
+    .feature-card .mockup-img-card {
+        height: 180px; /* Altura ainda menor para cards */
+    }
+
+    #app-preview .preview-gallery {
+        gap: 8px; /* Menor espaçamento */
+    }
+    .mockup-gallery-img {
+        max-width: calc(50% - 8px); /* Ajuste para 2 colunas */
+    }
+}
+
+/* Menu de sobreposição total no mobile */
+/*
+@media (max-width: 768px) {
+    header nav#primary-navigation {
+        inset: 0; // Ocupa a tela inteira
+        padding: 2em; // Ou mais, para centralizar o conteúdo
+        justify-content: center;
+    }
+    header nav#primary-navigation ul {
+        align-items: center; // Centraliza os links no menu fullscreen
+    }
+}
+*/
